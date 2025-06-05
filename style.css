@@ -84,3 +84,27 @@ header h1 {
   font-size: 30px;
   cursor: pointer;
 }
+.categories {
+  margin: 20px;
+  text-align: center;
+}
+.category-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.category-links button {
+  background-color: #ff0066;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.category-links button:hover {
+  background-color: #cc0052;
+}

@@ -1,83 +1,147 @@
 <!DOCTYPE html>
 <html lang="tl">
 <head>
-  <meta charset="UTF-8">
-  <title>Pinay Leaked - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adult Site with Hamburger Menu</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background: #111;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      gap: 20px;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hamburger div {
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    /* Search icon */
+    .search-icon {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      position: relative;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+    .search-icon::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 2px;
+      background: #fff;
+      top: 14px;
+      left: 14px;
+      transform: rotate(45deg);
+      transform-origin: center;
+      border-radius: 1px;
+    }
+
+    /* Dropdown menu for categories */
+    .menu {
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 140px;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .menu.show {
+      display: flex;
+    }
+    .menu a {
+      padding: 12px 16px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      transition: background 0.2s;
+    }
+    .menu a:last-child {
+      border-bottom: none;
+    }
+    .menu a:hover {
+      background: #555;
+    }
+
+    /* For demo content below header */
+    main {
+      margin-top: 60px;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 🔞 Age Warning -->
-<div id="ageWarning">
-  <h1>18+ Lang</h1>
-  <p>Ang site na ito ay may lamang sensitibo. Para lamang ito sa edad 18 pataas.</p>
-  <button id="enterBtn">Pasok</button>
-</div>
-
-<!-- 🔥 Header -->
-<header>
-  <h1>Pinay Leaked</h1>
-</header>
-
-<div class="container">
-
-  
-<header>
-  <div class="logo">
-    <h1>Pinay Leaked</h1>
-  </div>
-  <nav id="navMenu" class="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="category-boso.html">Boso Pinay</a>
-    <a href="category-solo.html">Pinay Solo</a>
-    <a href="category-couple.html">Couple Pinay</a>
-    <a href="about.html">About</a>
-  </nav>
-  <div class="hamburger" id="hamburgerBtn">
-    &#9776;
-  </div>
-</header>
-
-   <!-- 📢 Ad Banner -->
-  <div class="banner">
-    <img src="https://via.placeholder.com/728x90?text=Ad+Banner+Here" alt="Ad Banner">
-  </div>
-
-  <!-- 🎬 Video Grid -->
-  <div class="video-grid">
-    <div class="video-card" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-      <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
-      <h3>Sample Pinay Video #1</h3>
+  <header>
+    <div class="search-icon" title="Search"></div>
+    <div class="hamburger" id="hamburger" title="Menu">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <!-- dagdagan mo pa -->
-  </div>
 
-</div>
+    <nav class="menu" id="menu">
+      <a href="#solo">SOLO</a>
+      <a href="#couple">COUPLE</a>
+      <a href="#boso">BOSO</a>
+    </nav>
+  </header>
 
-<!-- 🎥 Modal -->
-<div id="videoModal">
-  <div class="modal-content">
-    <span class="closeBtn" onclick="closeModal()">&times;</span>
-    <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
+  <main>
+    <h1>Welcome to Your Adult Site</h1>
+    <p>Click the menu icon to view categories.</p>
+  </main>
 
-<script>
-  document.getElementById("enterBtn").onclick = function() {
-    document.getElementById("ageWarning").style.display = "none";
-  };
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
 
-  function openModal(url) {
-    document.getElementById("videoModal").style.display = "block";
-    document.getElementById("videoFrame").src = url;
-  }
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
 
-  function closeModal() {
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = "";
-  }
-</script>
+    // Optional: close menu when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
 </html>
